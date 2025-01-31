@@ -1,0 +1,241 @@
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Lato-Regular.ttf');
+}
+
+body {
+    font-family: Lato, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0e6f6;
+    color: #4b2e83;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#game-zone {
+    width: 40%;
+    background-color: #f9f1fe;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+#leaderboard {
+    width: 20%;
+    background-color: #f9f1fe;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+#leaderboard-list {
+    margin-top: 35px;
+    padding: 15px;
+    border: 2px solid #8a4bff;
+    border-radius: 8px;
+    background-color: #ede0f7;
+    list-style: none;
+    counter-reset: counter;
+}
+
+#leaderboard-list li {
+    margin-bottom: 15px;
+    color: #6a1e9f;
+    font-size: 1.2em;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    counter-increment: counter;
+}
+
+#leaderboard-list li::before {
+    content: counter(li);
+    color: #8a4bff;
+    content: "#" counter(counter);
+    font-weight: bold;
+}
+
+#leaderboard-list li:nth-child(1) {
+    margin-bottom: 8px;
+}
+
+#leaderboard-list li:nth-child(1)::before {
+    content: '';
+    display: inline-block;
+    background-image: url('../images/top1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(-8px);
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+#leaderboard-list li.no-icon::before {
+    background-image: none;
+    width: 0px;
+}
+
+#game-settings {
+    width: 20%;
+    background-color: #f9f1fe;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+#settings-form {
+    margin-top: 70px;
+    padding: 15px;
+    border: 2px solid #8a4bff;
+    border-radius: 8px;
+    background-color: #ede0f7;
+    display: flex;
+    flex-direction: column;
+}
+
+#settings-form label {
+    margin-bottom: 8px;
+    color: #6a1e9f;
+}
+
+#settings-form select {
+    margin-bottom: 20px;
+    padding: 8px;
+    font-size: 1em;
+    border: 2px solid #8a4bff;
+    border-radius: 5px;
+    background-color: #f0e6f6;
+    cursor: pointer;
+}
+
+#game-area {
+    position: relative;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px solid #8a4bff;
+    background-color: #f9f1fe;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.word {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    color: #6a1e9f;
+    animation: fall linear;
+}
+
+#input-box {
+    margin-top: 20px;
+    pointer-events: none;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    font-size: 1.2em;
+    border: 2px solid #8a4bff;
+    border-radius: 8px;
+    background-color: #ede0f7;
+    color: #4b2e83;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+#game-over {
+    display: none;
+    font-size: 2em;
+    color: #d32f2f;
+    margin-top: 20px;
+}
+
+#score {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #8a4bff;
+}
+
+#game-settings button, .popup button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #8a4bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#replay-button {
+    display: block;
+    margin-top: 50px;
+}
+
+#save-score {
+    display: block;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+#replay-button:hover, #save-score:hover, .popup button:hover {
+    background-color: #6a2ca3;
+}
+
+.correct {
+    color: #388e3c;
+}
+
+.incorrect {
+    color: #d32f2f;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+.popup button {
+    margin-top: 20px;
+}
+
+@keyframes fall {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100%;
+    }
+}

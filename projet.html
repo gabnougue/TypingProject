@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jeu de frappe au clavier">
+    <meta name="keywords" content="jeu, frappe, clavier, rapidité">
+    <meta name="authors" content="Roxane, Gabin">
+    <title>Ça c'est de la frappe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link rel="icon" type="image/png" href="images/gant.png" />
+</head>
+<body>
+    <div class="container">
+        <div id="game-settings">
+            <h1>Paramètres</h1>
+            <div id="settings-form">
+                <label for="difficulty">Difficulté :</label>
+                <select name="difficulty" id="difficulty">
+                    <option value="9">Débutant</option>
+                    <option value="7" selected>Amateur</option>
+                    <option value="5">Confirmé</option>
+                    <option value="3">Expert</option>
+                    <option value="2">Maître</option>
+                </select>
+                <label for="theme">Thème :</label>
+                <select name="theme" id="theme">
+                    <option value="technologie" selected>Technologie</option>
+                    <option value="cuisine">Cuisine</option>
+                    <option value="nature">Nature</option>
+                    <option value="voyage">Voyage</option>
+                    <option value="fortnite">Fortnite</option>
+                </select>
+            </div>
+            <button id="replay-button">Jouer</button>
+            <button id="save-score">Enregistrer mon score</button>
+        </div>
+        <div id="game-zone">
+            <h1>Ça c'est de la frappe 🥊</h1>
+            <div id="score">Score : 0</div>
+            <div id="game-area"></div>
+            <div id="input-box">
+                <input type="text" id="word-input" placeholder="Cliquez sur 'Jouer' pour lancer la partie">
+            </div>
+            <div id="game-over">Jeu terminé !</div>
+        </div>
+        <div id="leaderboard">
+            <h1 id="leaderboard-title">Classement</h1>
+            <ol id="leaderboard-list"></ol>
+        </div>
+    </div>
+    <div id="save-score-popup" class="popup">
+        <div class="popup-content">
+            <h2>Enregistrer le score</h2>
+            <input type="text" id="player-name" placeholder="Entrez votre nom">
+            <button id="save-score-btn">Sauvegarder</button>
+            <button id="cancel-save-score">Annuler</button>
+        </div>
+    </div>    
+
+    <audio id="correct-sound" src="audio/correct.mp3"></audio>
+    <audio id="game-over-sound" src="audio/gameover.mp3"></audio>
+    <audio id="wrong-sound" src="audio/wrong.mp3"></audio>
+    <audio id="record-sound" src="audio/record.mp3"></audio>
+</body>
+</html>

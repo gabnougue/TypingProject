@@ -85,8 +85,7 @@ saveScoreBtn.addEventListener('click', () => {
     saveScorePopup.style.display = 'none';
     playerNameInput.value = '';
 
-    saveScore.style.opacity = 0;
-    saveScore.style.transform = 'translateY(-20)';
+    saveScore.classList.remove('show');
 
     loadLeaderboard();
 });
@@ -115,7 +114,12 @@ function forceSelectStates() {
     difficulty.value = anim_duration;
 }
 
+function resetInput(){
+    wordInput.value = '';
+}
+
 forceSelectStates();
+resetInput();
 
 document.addEventListener('DOMContentLoaded', loadLeaderboard);
 
@@ -123,7 +127,9 @@ difficulty.addEventListener('change', () => {
     updateSettings();
     console.log(`leaderboard_${anim_duration}`);
     leaderboard = JSON.parse(localStorage.getItem(`leaderboard_${anim_duration}`)) || [];
+    saveScore.classList.remove('show');
     loadLeaderboard();
+    
 });
 
 function addWord() {
@@ -222,8 +228,7 @@ wordInput.addEventListener('input', (event) => {
 function endGame() {
     gameRunning = false;
     gameOverMessage.style.display = 'block';
-    saveScore.style.opacity = 1;
-    saveScore.style.transform = 'translateY(0)';
+    saveScore.classList.add('show');
     activeWords.forEach(word => word.style.animationPlayState = 'paused');
 
     gameOverSound.currentTime = 0;
@@ -242,8 +247,7 @@ function resetGame() {
     score = 0;
     updateScore();
     gameOverMessage.style.display = 'none';
-    saveScore.style.opacity = 0;
-    saveScore.style.transform = 'translateY(-20)';
+    saveScore.classList.remove('show');
     replayButton.textContent = 'Rejouer';
     wordInput.placeholder = 'Tapez le mot ici';
     wordInput.style.pointerEvents = 'auto';

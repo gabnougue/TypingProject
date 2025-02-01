@@ -169,6 +169,10 @@ input[type="text"]:focus {
     color: #8a4bff;
 }
 
+#game-settings #replay-button, .popup button {
+    transition: background-color 0.3s ease;
+}
+
 #game-settings button, .popup button {
     width: 100%;
     padding: 12px 20px;
@@ -178,7 +182,6 @@ input[type="text"]:focus {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 #replay-button {
@@ -190,8 +193,13 @@ input[type="text"]:focus {
     display: block;
     opacity: 0;
     transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
     margin-top: 20px;
+}
+
+#save-score.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #replay-button:hover, #save-score:hover, .popup button:hover {

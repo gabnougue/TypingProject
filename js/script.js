@@ -27,6 +27,7 @@ const cancelSaveScore = document.getElementById('cancel-save-score');
 /* Leaderboard */
 const leaderboardList = document.getElementById('leaderboard-list');
 const leaderboardTitle = document.getElementById('leaderboard-title');
+const resetLeaderboard = document.getElementById('reset-leaderboard');
 
 let endMessage = document.getElementById('end-message');
 let recordMessage = document.getElementById('record-message');
@@ -110,8 +111,16 @@ function loadLeaderboard() {
         li.classList.add('no-icon');
         li.style.paadingRight = '10px';
         leaderboardList.appendChild(li);
+        resetLeaderboard.style.display = 'none';
     } 
 }
+
+resetLeaderboard.addEventListener('click', () => {
+    leaderboard = [];
+    localStorage.removeItem(`leaderboard_${anim_duration}`);
+    loadLeaderboard();
+    resetLeaderboard.style.display = 'none';
+});
 
 // Forcer les états car le select ne se met pas à jour automatiquement
 function forceSelectStates() {
@@ -133,6 +142,7 @@ difficulty.addEventListener('change', () => {
     console.log(`leaderboard_${anim_duration}`);
     leaderboard = JSON.parse(localStorage.getItem(`leaderboard_${anim_duration}`)) || [];
     saveScore.classList.remove('show');
+    resetLeaderboard.style.display = 'block';
     loadLeaderboard();
     resetAll()
 });

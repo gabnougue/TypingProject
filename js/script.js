@@ -8,7 +8,6 @@ const themes = {
 /* Main elements */
 const gameArea = document.getElementById('game-area');
 const wordInput = document.getElementById('word-input');
-const gameOverMessage = document.getElementById('game-over');
 const scoreDisplay = document.getElementById('score');
 /* Sounds */
 const correctSound = document.getElementById('correct-sound');
@@ -28,6 +27,9 @@ const cancelSaveScore = document.getElementById('cancel-save-score');
 /* Leaderboard */
 const leaderboardList = document.getElementById('leaderboard-list');
 const leaderboardTitle = document.getElementById('leaderboard-title');
+
+let endMessage = document.getElementById('end-message');
+let recordMessage = document.getElementById('record-message');
 
 /* Game variables */
 let activeWords = [];
@@ -132,7 +134,7 @@ difficulty.addEventListener('change', () => {
     leaderboard = JSON.parse(localStorage.getItem(`leaderboard_${anim_duration}`)) || [];
     saveScore.classList.remove('show');
     loadLeaderboard();
-    
+    resetAll()
 });
 
 function addWord() {
@@ -221,10 +223,16 @@ wordInput.addEventListener('input', (event) => {
             score += 1;
             updateScore();
 
+            // Recrd battu ?
             if (!recordSoundPlayed && leaderboard.length > 0 && score > leaderboard[0].score) {
                 recordSound.currentTime = 0;
                 recordSound.play();
                 recordSoundPlayed = true;
+                // Déclenche les confettis
+                confetti.create(document.getElementById('confetti'), {
+                    resize: true,
+                    useWorker: true,
+                });
             } else {
                 correctSound.currentTime = 0;
                 correctSound.play();
@@ -238,11 +246,47 @@ wordInput.addEventListener('input', (event) => {
     }
 });
 
+function resetAll() {
+    gameRunning = false;
+    score = 0;
+    updateScore();
+    gameArea.innerHTML = '';
+    activeWords = [];
+    wordInput.value = '';
+    wordInput.placeholder = 'Appuyez sur "Jouer" pour recommencer';
+    wordInput.style.pointerEvents = 'none';
+    wordInput.blur();
+    replayButton.textContent = 'Jouer';
+    saveScore.classList.remove('show');
+    endMessage.style.opacity=0;
+    recordMessage.style.opacity=0;
+    setTimeout(() => {
+        endMessage.style.top='55%';
+    }, 600);
+    wrongSoundPlayed = false;
+    recordSoundPlayed = false;
+    document.body.style.backgroundColor = "#f0e6f6";
+    clearInterval(interval);
+}
+
+
 function endGame() {
     gameRunning = false;
-    gameOverMessage.style.display = 'block';
     saveScore.classList.add('show');
-    activeWords.forEach(word => word.style.animationPlayState = 'paused');
+    wordInput.placeholder = 'Appuyez sur "Rejouer" pour recommencer';
+    wordInput.style.pointerEvents = 'none';
+    wordInput.value = '';
+    wordInput.blur();
+    activeWords = [];
+    gameArea.innerHTML = '';
+    // ajout du message de fin de partie
+    if (recordSoundPlayed) {
+        recordMessage.style.opacity=1;
+        endMessage.style.top='50%';
+    }
+    endMessage.style.opacity=1;
+    
+    clearInterval(interval);
 
     gameOverSound.currentTime = 0;
     gameOverSound.play();
@@ -259,12 +303,17 @@ function resetGame() {
     gameRunning = true;
     score = 0;
     updateScore();
-    gameOverMessage.style.display = 'none';
+    gameArea.innerHTML = '';
     saveScore.classList.remove('show');
     replayButton.textContent = 'Rejouer';
     wordInput.placeholder = 'Tapez le mot ici';
     wordInput.style.pointerEvents = 'auto';
     wordInput.value = '';
+    endMessage.style.opacity=0;
+    recordMessage.style.opacity=0;
+    setTimeout(() => {
+        endMessage.style.top='55%';
+    }, 600);
     activeWords.forEach(word => gameArea.removeChild(word));
     activeWords = [];
     wrongSoundPlayed = false;

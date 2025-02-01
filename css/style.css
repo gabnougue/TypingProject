@@ -28,6 +28,7 @@ body {
     background-color: #f9f1fe;
     border-radius: 8px;
     padding: 15px;
+    position: relative;
 }
 
 #leaderboard {
@@ -156,11 +157,26 @@ input[type="text"]:focus {
     outline: none;
 }
 
-#game-over {
-    display: none;
+#end-message {
     font-size: 2em;
+    font-weight: bold;
     color: #d32f2f;
     margin-top: 20px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.6s ease, top 0.6s ease;
+}
+
+#record-message {
+    font-size: 0.5em;
+    color: #8a4bff;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.6s ease, top 0.6s ease;
 }
 
 #score {

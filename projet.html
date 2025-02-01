@@ -8,6 +8,7 @@
     <meta name="authors" content="Roxane, Gabin">
     <title>C'est de la frappe</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/confettis@0.3.7/lib/confettis.min.js"></script>
     <script src="js/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/gant.png" />
 </head>
@@ -37,13 +38,13 @@
             <button id="save-score">Enregistrer mon score</button>
         </div>
         <div id="game-zone">
+            <div id="end-message">Jeu terminé !<br><span id="record-message">Nouveau record ! 🏆</span></div>
             <h1>C'est de la frappe</h1>
             <div id="score">Score : 0</div>
             <div id="game-area"></div>
             <div id="input-box">
-                <input type="text" id="word-input" placeholder="Cliquez sur 'Jouer' pour lancer la partie">
+                <input type="text" id="word-input" placeholder='Cliquez sur "Jouer" pour lancer la partie'>
             </div>
-            <div id="game-over">Jeu terminé !</div>
         </div>
         <div id="leaderboard">
             <h1 id="leaderboard-title">Classement</h1>

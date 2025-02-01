@@ -92,11 +92,12 @@ saveScoreBtn.addEventListener('click', () => {
     playerNameInput.value = '';
 
     saveScore.classList.remove('show');
-
+    
     loadLeaderboard();
 });
 
 function loadLeaderboard() {
+    resetLeaderboard.style.display = 'block';
     leaderboardTitle.innerHTML = `Classement <span style="font-size: 0.7em; font-weight: normal;">(${difficultyValues[anim_duration]})</span>`;
     leaderboardList.innerHTML = ''; 
     leaderboard.forEach(score => {
@@ -116,10 +117,19 @@ function loadLeaderboard() {
 }
 
 resetLeaderboard.addEventListener('click', () => {
+    const confirmPopup = document.getElementById('confirm-popup');
+    confirmPopup.style.display = 'flex';
+});
+
+document.getElementById('cancel-reset').addEventListener('click', () => {
+    document.getElementById('confirm-popup').style.display = 'none';
+});
+
+document.getElementById('confirm-reset').addEventListener('click', () => {
     leaderboard = [];
-    localStorage.removeItem(`leaderboard_${anim_duration}`);
+    localStorage.setItem(`leaderboard_${anim_duration}`, JSON.stringify(leaderboard));
     loadLeaderboard();
-    resetLeaderboard.style.display = 'none';
+    document.getElementById('confirm-popup').style.display = 'none';
 });
 
 // Forcer les états car le select ne se met pas à jour automatiquement
@@ -142,7 +152,6 @@ difficulty.addEventListener('change', () => {
     console.log(`leaderboard_${anim_duration}`);
     leaderboard = JSON.parse(localStorage.getItem(`leaderboard_${anim_duration}`)) || [];
     saveScore.classList.remove('show');
-    resetLeaderboard.style.display = 'block';
     loadLeaderboard();
     resetAll()
 });

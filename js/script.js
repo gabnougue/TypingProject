@@ -1,9 +1,9 @@
 const themes = {
-    cuisine: ["cuisine", "recette", "plat", "ingrédient", "aliment", "nourriture", "repas", "déjeuner", "dîner", "boisson", "chef", "cuisinier", "pâtissier", "boulanger", "traiteur", "restaurant", "menu", "carte", "saveur", "goût", "odeur", "texture", "cuisson", "four", "poêle", "casserole", "marmite", "mixeur", "robot", "couteau", "fourchette", "cuillère", "assiette", "verre", "tasse", "serviette", "table", "chaise", "nappe", "pain", "riz", "pâtes", "viande", "poisson", "légume", "fruit", "herbe", "épice", "sel", "poivre", "sucre", "huile", "vinaigre", "eau", "lait", "vin", "bière", "fromage", "yaourt", "œuf", "farine", "levure", "chocolat", "vanille", "café", "thé", "jus", "soupe", "salade", "gâteau", "tarte", "pizza", "burger", "sushi", "curry", "tajine", "paella", "couscous", "ragoût", "friture", "grillade", "vapeur", "bouilli", "rôti", "confit", "mariné", "fumé", "frais", "sec", "cuit", "cru"],
-    fortnite: ["fortnite", "jeu", "multijoueur", "joueur", "victoire", "défaite", "saison", "chapitre", "tournoi", "stream", "youtubeur", "twitch", "esport", "île", "carte", "zones", "villes", "lieux", "bâtiments", "monuments", "paysages", "tempête", "bus", "armes", "fusils", "pompes", "pistolets", "mitraillettes", "assauts", "snipers", "roquettes", "grenades", "explosifs", "soin", "kits", "bandages", "boucliers", "potions", "armures", "véhicules", "voitures", "camions", "construire", "détruire", "tirer", "viser", "sauter", "courir", "accroupir", "ramper", "nager", "voler", "atterrir", "looter", "fouiller", "combattre", "survivre", "gagner", "perdre", "mourir", "réanimer", "collaborer", "skins", "personnages", "héros", "méchants", "émotes", "danses", "gestes", "accessoires", "cosmétiques", "tenues", "styles", "frag", "kill", "headshot", "noob", "pro", "bot", "lag", "ping", "stuff", "loot", "rush", "camper", "zone", "storm", "argent", "v bucks", "boutique", "pass", "niveau"],
+    cuisine: ["cuisine", "recette", "plat", "ingrédient", "aliment", "nourriture", "repas", "déjeuner", "dîner", "boisson", "chef", "cuisinier", "pâtissier", "boulanger", "traiteur", "restaurant", "menu", "carte", "saveur", "goût", "odeur", "texture", "cuisson", "four", "poêle", "casserole", "marmite", "mixeur", "robot", "couteau", "fourchette", "cuillère", "assiette", "verre", "tasse", "serviette", "table", "chaise", "nappe", "pain", "riz", "pâtes", "viande", "poisson", "légume", "fruit", "herbe", "épice", "sel", "poivre", "sucre", "huile", "vinaigre", "eau", "lait", "vin", "bière", "fromage", "yaourt", "oeuf", "farine", "levure", "chocolat", "vanille", "café", "thé", "jus", "soupe", "salade", "gâteau", "tarte", "pizza", "burger", "sushi", "curry", "tajine", "paella", "couscous", "ragoût", "friture", "grillade", "vapeur", "bouilli", "rôti", "confit", "mariné", "fumé", "frais", "sec", "cuit", "cru"],
+    fortnite: ["fortnite", "jeu", "multijoueur", "joueur", "victoire", "défaite", "saison", "chapitre", "tournoi", "stream", "youtubeur", "twitch", "esport", "île", "carte", "zones", "villes", "lieux", "bâtiments", "monuments", "paysages", "tempête", "bus", "armes", "fusils", "pompes", "pistolets", "mitraillettes", "assauts", "snipers", "roquettes", "grenades", "explosifs", "soin", "kits", "bandages", "boucliers", "potions", "armures", "véhicules", "voitures", "camions", "construire", "détruire", "tirer", "viser", "sauter", "courir", "accroupir", "ramper", "nager", "voler", "atterrir", "looter", "fouiller", "combattre", "survivre", "gagner", "perdre", "mourir", "réanimer", "collaborer", "skins", "personnages", "héros", "méchants", "émotes", "danses", "gestes", "accessoires", "cosmétiques", "tenues", "styles", "frag", "kill", "headshot", "noob", "pro", "bot", "lag", "ping", "stuff", "loot", "rush", "camper", "zone", "storm", "argent", "vbucks", "boutique", "pass", "niveau"],
     nature: ["nature", "environnement", "écologie", "biodiversité", "plante", "arbre", "fleur", "animal", "oiseau", "poisson", "insecte", "mammifère", "reptile", "amphibien", "montagne", "vallée", "colline", "plaine", "forêt", "prairie", "désert", "océan", "mer", "rivière", "lac", "cascade", "soleil", "lune", "étoile", "ciel", "nuage", "pluie", "neige", "vent", "température", "climat", "saison", "printemps", "été", "automne", "hiver", "terre", "sol", "roche", "minéral", "eau", "air", "feu", "écosystème", "habitat", "espèce", "population", "évolution", "adaptation", "survie", "protection", "conservation", "ressources", "énergie", "pollution", "déforestation", "changement climatique", "ozone", "oxygène", "photosynthèse", "chlorophylle", "racine", "tige", "feuille", "fruit", "graine", "sève", "bois", "marais", "savane", "toundra", "jungle"],
-    technologie: ["technologie", "innovation", "numérique", "digital", "ordinateur", "portable", "smartphone", "tablette", "internet", "réseau", "logiciel", "application", "programme", "code", "données", "information", "communication", "téléphone", "télévision", "radio", "caméra", "musique", "vidéo", "jeu", "robotique", "impression 3D", "drones", "capteur", "automatisme", "électronique", "électrique", "énergie", "science", "recherche", "développement", "ingénierie", "industrie", "production", "consommation", "futur", "progrès", "invention", "découverte", "processeur", "mémoire", "stockage", "écran", "clavier", "souris", "imprimante", "scanner", "connexion", "wifi", "bluetooth", "ethernet", "navigateur", "moteur", "email", "messagerie", "plateforme", "contenu"],
-    voyage: ["voyage", "vacances", "tourisme", "destination", "hôtel", "avion", "train", "voiture", "bateau", "bus", "aéroport", "gare", "port", "route", "carte", "globe", "pays", "ville", "village", "région", "continent", "océan", "mer", "montagne", "plage", "forêt", "désert", "culture", "tradition", "langue", "cuisine", "art", "histoire", "monument", "musée", "hébergement", "transport", "itinéraire", "excursion", "aventure", "découverte", "exploration", "touriste", "voyageur", "guide", "restauration", "divertissement", "shopping", "souvenir", "photographie", "vidéo", "blog", "récit", "carnet", "budget", "organiser", "réserver", "planifier", "préparer", "partir", "arriver", "explorer", "découvrir", "apprendre", "rencontrer", "partager", "profiter", "se détendre"]
+    technologie: ["technologie", "innovation", "numérique", "digital", "ordinateur", "portable", "smartphone", "tablette", "internet", "réseau", "logiciel", "application", "programme", "code", "données", "information", "communication", "téléphone", "télévision", "radio", "caméra", "musique", "vidéo", "jeu", "robotique", "drones", "capteur", "automatisme", "électronique", "électrique", "énergie", "science", "recherche", "développement", "ingénierie", "industrie", "production", "consommation", "futur", "progrès", "invention", "découverte", "processeur", "mémoire", "stockage", "écran", "clavier", "souris", "imprimante", "scanner", "connexion", "wifi", "bluetooth", "ethernet", "navigateur", "moteur", "email", "messagerie", "plateforme", "contenu"],
+    voyage: ["voyage", "vacances", "tourisme", "destination", "hôtel", "avion", "train", "voiture", "bateau", "bus", "aéroport", "gare", "port", "route", "carte", "globe", "pays", "ville", "village", "région", "continent", "océan", "mer", "montagne", "plage", "forêt", "désert", "culture", "tradition", "langue", "cuisine", "art", "histoire", "monument", "musée", "hébergement", "transport", "itinéraire", "excursion", "aventure", "découverte", "exploration", "touriste", "voyageur", "guide", "restauration", "divertissement", "shopping", "souvenir", "photographie", "vidéo", "blog", "récit", "carnet", "budget", "organiser", "réserver", "planifier", "préparer", "partir", "arriver", "explorer", "découvrir", "apprendre", "rencontrer", "partager", "profiter", "détente"]
 };
 /* Main elements */
 const gameArea = document.getElementById('game-area');
@@ -39,6 +39,7 @@ let wrongSoundPlayed = false;
 let recordSoundPlayed = false;
 let interval;
 let theme_name = 'technologie';
+let isComposing = false;
 
 function updateScore() {
     scoreDisplay.textContent = `Score : ${score}`;
@@ -57,6 +58,8 @@ let leaderboard = JSON.parse(localStorage.getItem(`leaderboard_${anim_duration}`
 
 saveScore.addEventListener('click', () => {
     saveScorePopup.style.display = 'flex';
+    /* Focus sur l'input */
+    playerNameInput.focus();
 });
 
 cancelSaveScore.addEventListener('click', () => {
@@ -155,8 +158,18 @@ function addWord() {
     activeWords.push(wordElement);
 }
 
+wordInput.addEventListener("compositionstart", () => {
+    isComposing = true;
+});
+
+wordInput.addEventListener("compositionend", () => {
+    isComposing = false;
+});
+
 // Vérifier si le mot saisi est correct et surligner les lettres
 wordInput.addEventListener('input', (event) => {
+    if (isComposing) return;
+
     const inputText = wordInput.value.trim();
 
     if (activeWords.length > 0) {

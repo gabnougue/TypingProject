@@ -191,6 +191,7 @@ input[type="text"]:focus {
 
 #save-score {
     display: block;
+    pointer-events: none;
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
@@ -200,6 +201,7 @@ input[type="text"]:focus {
 #save-score.show {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: all;
 }
 
 #replay-button:hover, #save-score:hover, .popup button:hover {
